@@ -1,10 +1,10 @@
-double my_pow(double a, unsigned int b)
+double my_pow(double a, int b)
 {
-    double temp = a;
     if (b == 0)
         return 1;
-    for (int i = 0; i < b-1; i++)
+    if (b % 2 == 0)
     {
-       temp = temp * a;
+        return my_pow(a * a, b / 2);
     }
+    return a * my_pow(a, b - 1);
 }
